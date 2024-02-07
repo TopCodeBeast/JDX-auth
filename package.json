@@ -25,7 +25,7 @@
     "morgan": "~1.10.0",
     "multer": "*",
     "nodemailer": "^6.4.6",
-    "npm-check-updates": "^4.1.2",
+    "npm-check-updates": "^16.14.14",
     "passport": "*",
     "passport-http": "*",
     "passport-local": "*",
