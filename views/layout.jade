@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Login Database
+    link(rel='shortcut icon', href='')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+
+  body
+    nav.navbar.navbar-default.navbar-inverse.top-bar  
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href='#') Login Database
+        ul.nav.navbar-nav
+          
+          if !person
+           li(class=(title=='Register'?'active':''))
+            a(href='/users/register') Register
+           li(class=(title=='Login'?'active':''))
+            a(href='/users/login') Login
+           li(class=(title=='Members'?'active':''))
+            a(href='/users/members') Members
+        ul.nav.navbar-nav.navbar-right
+          if person
+            li
+              span.navbar-brand(style='color:white;font-size:1.3vw;padding-right:10px;') Hello #{person.name}, 
+               a(href='/users/logout') Logout
+    .container
+      !=messages()
+    block content

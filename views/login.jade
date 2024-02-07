@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    div.container
+        div.loginForm
+            h2.page-header Login
+            form(method='post', action='/users/login')
+                .form-group
+                label Username
+                input.form-control(name='username',type='text',placeholder='Enter your username')
+                .form-group
+                label Password
+                input.form-control(name='password',type='password',placeholder='Enter your password')
+                input.btn.btn-primary.loginButton(type='submit',value='Login')

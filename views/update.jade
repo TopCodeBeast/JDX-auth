@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    h2.page-header Update
+    form(method='post', action='/users/update')
+      .form-group
+        input.form-control(name='uuid',type='hidden',id='uuid' value=user.uuid)
+      .form-group
+        label Name
+        input.form-control(name='name',type='text',placeholder='Enter your name',id='name',value=user.name)
+      .form-group
+        label Contact-Number
+        input.form-control(name='contact',type='number',placeholder='Enter your contact number',maxlength='10',id='contact',value=user.contact)
+      .form-group
+        label Email
+        input.form-control(name='email',type='email',placeholder='Enter your email',id='email',value=user.email)
+      .form-group
+        label Username
+        input.form-control(name='username',type='text',placeholder='Enter your username',id='username',value=user.uname)
+      .form-group
+        label Password
+        input.form-control(name='password',type='password',placeholder='Enter your password',id='password')
+      .form-group
+        label Confirm Password
+        input.form-control(name='cpassword',type='password',placeholder='Confirm password',id='cpassword')
+      .form-group
+        label Profile Image
+        input.form-control(name='profile',type='file')
+      .form-group 
+        input.btn.btn-primary(type='submit',value='Save')
+       

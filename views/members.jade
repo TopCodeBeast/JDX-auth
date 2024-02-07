@@ -1,0 +1,39 @@
+extends layout
+block content
+  h2.page-header Members
+  div.container
+    table.table
+      thead
+        th Name
+        th Email
+        th Username
+        th Action
+      tbody
+          each member in members
+            tr
+              td= member.name
+              td= member.email
+              td= member.uname
+              td.row
+                a.btn.btn-primary.mr-1(href="/users/update/" + member.id) Update 
+                input.btn.btn-danger(type='button', class="delete", userId=member.id value="Delete")
+      
+    script.
+      $(document).ready( function() {
+        $('.delete').on('click', function () {
+          const userId = $(this).attr('userId');
+          
+          $.ajax({
+            url: "/users",
+            method: "DELETE",
+            data: { userId },
+            success : function (data) {
+              console.log('data', data)
+              alert("Deleted user successfully");
+              window.location.reload();
+            }
+          });
+        });
+      });
+
+      
